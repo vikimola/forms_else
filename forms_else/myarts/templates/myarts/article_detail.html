@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc; ">
+{% load humanize %}
+<h1>{{ article.title }}</h1>
+<p>{{article.text}}</p>
+({{ article.updated_at|naturaltime }})
+{% if article.owner == user %}
+
+
+<h2>Actions:</h2>
+<ul>
+    <li><a href="{% url 'update' article.id %}">Update</a></li>
+    <li><a href="{% url 'delete' article.id %}">Delete</a></li>
+</ul>
+{% endif %}
+<h3><a href="{% url 'create' %}">Create new article</a></h3>
+<h3><a href="{% url 'home' %}">Home page</a></h3>
+
+</body>
+</html>

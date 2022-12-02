@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-color:#abf9cc;">
+
+<form method="post">
+    {% csrf_token %}
+    <h2>Create a Breed:</h2>
+    <p>
+        {{form.as_p}}
+    </p>
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

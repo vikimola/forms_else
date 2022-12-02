@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc; ">
+
+<h1>Log in!</h1>
+
+{% if form.non_field_errors %}
+
+<ul>
+    {% for err in form.non_field_errors %}
+    <li>{{err}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<form action="{% url 'log_in' %}" method="post">
+    {% csrf_token %}
+
+            {% comment %}
+    <!--    <p>Name:</p>-->
+    <!--    <input type="text" name="username" id="username">-->
+    <!--    <p>Pw:</p>-->
+    <!--    <input type="text" name="password" id="password">-->
+            {% endcomment %}
+
+    <p>
+        {{forms.as_p}}
+    </p>
+
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<h3><a href= "{% url 'home' %}" >Home page</a></h3>
+
+
+</body>
+</html>

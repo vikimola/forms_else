@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BU</title>
+</head>
+<body style="background-color:#abf9cc;">
+
+<h1>Change: {{breed.name}} </h1>
+<form method="post">
+    {% csrf_token %}
+    <p>
+        {{form.as_p}}
+    </p>
+    <input type="submit" value="Submit">
+    <input type="submit" value="Cancel" onclick="window.location.href='{% url 'bview' %}'; return false;">
+</form>
+
+<br>
+<form action="{% url 'home' %}">
+    <h2>Home:</h2>
+    <input type="submit" value="Go">
+</form>
+</body>
+</html>

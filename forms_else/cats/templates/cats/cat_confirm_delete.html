@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc;">
+
+<form  method="post">
+    {% csrf_token %}
+    <h2>Are you sure?</h2>
+    <h4>Delete {{breed.name}}?</h4>
+    <input type="submit" value="Delete">
+    <input type="submit" value="Cancel" onclick="window.location.href='{% url 'bview' %}'; return false;">
+</form>
+
+</body>
+</html>

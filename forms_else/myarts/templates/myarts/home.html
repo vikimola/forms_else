@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="background-color:#abf9cc; ">
+{% if user.is_authenticated %}
+<h1>Hello, {{user.username}}!</h1>
+{% else %}
+<h1>Hello, GUEST!</h1>
+{% endif %}
+<br>
+
+<h3><a href="{% url 'log_in' %}">Log in</a></h3>
+
+<br>
+
+<h3><a href="{% url 'view' %}">List of articles</a></h3>
+</body>
+</html>

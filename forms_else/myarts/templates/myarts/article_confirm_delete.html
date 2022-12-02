@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc; ">
+
+<h1>Are you sure you wanna delete?</h1>
+<form method="post">
+    {% csrf_token %}
+  <input type="submit" value="Delete">
+  <input type="submit" value ="Cancel" onclick="window.location.href='{% url 'view' %}'; return false;">
+</form>
+</body>
+</html>

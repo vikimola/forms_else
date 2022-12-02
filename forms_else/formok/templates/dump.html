@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dump</title>
+</head>
+<body style="background-color:lightblue; color:white;">
+<p>Dump of {{title}}:</p>
+<p>{{dump|safe}}</p>
+<!--safe tells dj that content needs no further processing-> already escaped-->
+<a href="{% url 'formok:main' %}">Back</a>
+</body>
+</html>

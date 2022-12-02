@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc; ">
+<h1>List of articles</h1>
+{% if article_list %}
+<ul>
+    {% for article in article_list %}
+    {% comment %}
+    {% if article.owner == user %}
+    {% endif %}
+    {% endcomment %}
+    <li> <a href="{% url 'detail' article.id %}">{{article}}</a></li>
+
+    {% endfor %}
+</ul>
+{% else %}
+<h2>No articles.</h2>
+{% endif %}
+<br>
+<h3><a href= "{% url 'create' %}" >Create new article</a></h3>
+<h3><a href= "{% url 'home' %}" >Home page</a></h3>
+
+
+
+</body>
+</html>

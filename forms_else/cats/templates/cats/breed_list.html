@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc;">
+
+
+{% if breed_list %}
+<h2>List of breeds:</h2>
+{% for breed in breed_list %}
+<ul>
+    <li>{{breed.name}}
+        (<a href="{% url 'bupdate' breed.id %}">Update</a> |
+        <a href="{% url 'bdelete' breed.id %}">Delete)</a></li>
+</ul>
+{% endfor %}
+{% else %}
+<h2>No breeds available.</h2>
+{% endif %}
+
+<br>
+<form action="{% url 'home' %}">
+    <h2>Home:</h2>
+    <input type="submit" value="Go">
+</form>
+<br>
+
+<form action="{% url 'bcreate' %}">
+    <h2>Create Breed:</h2>
+    <input type="submit" value="Go">
+</form>
+
+
+</body>
+</html>

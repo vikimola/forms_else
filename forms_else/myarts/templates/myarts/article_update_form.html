@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#abf9cc; ">
+{% load crispy_forms_tags %}
+<h1>Add an article!</h1>
+<form method="post" >
+    {% csrf_token %}
+{{form|crispy}}
+    <input type="submit" value="Submit">
+    <input type="submit" value="Cancel" onclick="window.location.href='{% url 'view' %}';return false;">
+</form>
+</body>
+</html>
